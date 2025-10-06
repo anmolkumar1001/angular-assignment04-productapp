@@ -1,0 +1,86 @@
+<div class="container mt-4">
+    <h1>Demonstrating of obtaining data from server through a service</h1>
+  <h2 class="text-center mb-4 text-primary fw-bold">🛒 Product Management</h2>
+
+  <!-- Add Product Form -->
+  <div class="card shadow-sm p-4 mb-4">
+    <h5 class="mb-3 text-secondary">Add New Product</h5>
+    <form class="row g-3">
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="newProduct.name"
+          name="name"
+          placeholder="Product Name"
+          required
+        />
+      </div>
+      <div class="col-md-4">
+        <select
+            class="form-select"
+            [(ngModel)]="newProduct.category"
+            name="category"
+            required
+        >
+
+        <option value="" disabled selected>Select Category</option>
+        <option *ngFor="let category of categories" [value]="category">
+            {{category}}
+        </option>
+        </select>
+      </div>
+      
+      <div class="col-md-3">
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="newProduct.quantity"
+          name="quantity"
+          placeholder="Quantity"
+          min="1"
+          required
+        />
+      </div>
+      <div class="col-md-1 d-grid">
+        <button type="button" class="btn btn-success" (click)="addProduct()">
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Product List -->
+  <div class="card shadow-sm p-4">
+    <h5 class="mb-3 text-secondary">Product List</h5>
+
+    <table class="table table-striped align-middle text-center">
+      <thead class="table-primary">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id!)">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="products.length === 0">
+          <td colspan="5" class="text-muted">No products available.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

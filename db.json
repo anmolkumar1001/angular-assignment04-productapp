@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "Moto Edge 50 Fusion",
+      "category": "Moblies",
+      "quantity": 5,
+      "id": 1
+    },
+    {
+      "name": "HP x360",
+      "category": "Computers",
+      "quantity": 5,
+      "id": 2
+    }
+  ]
+}
