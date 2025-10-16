@@ -1,0 +1,24 @@
+<h2>Add New Product</h2>
+
+<form #productForm="ngForm" (ngSubmit)="addProduct(productForm)" class="mt-3">
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="newProduct.name" required />
+    </div>
+
+    <div class="mb-3">
+    <label class="form-label">Category</label><br />
+    <div *ngFor="let c of categories" class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="category" [(ngModel)]="newProduct.category" [value]="c" required />
+      <label class="form-check-label">{{ c }}</label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input type="number" class="form-control" name="quantity" [(ngModel)]="newProduct.quantity" required min="1" />
+  </div>
+
+  <button class="btn btn-primary" [disabled]="!productForm.valid">Add Product</button>
+
+</form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Product, ProductService } from "./product.service";
+import { Product, ProductService } from "../services/product.service";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
@@ -27,14 +27,14 @@ export class ProductsComponent implements OnInit {
         });
     }
 
-    addProduct() {
-        if(this.newProduct.name && this.newProduct.category && this.newProduct.quantity > 0) {
-            this.productService.addProduct({...this.newProduct}).subscribe(() => {
-                this.loadProducts();
-                this.newProduct = {name: '', category: '', quantity: 0};
-            });
-        }
-    }
+    // addProduct() {
+    //     if(this.newProduct.name && this.newProduct.category && this.newProduct.quantity > 0) {
+    //         this.productService.addProduct({...this.newProduct}).subscribe(() => {
+    //             this.loadProducts();
+    //             this.newProduct = {name: '', category: '', quantity: 0};
+    //         });
+    //     }
+    // }
 
     deleteProduct(id: number) {
         this.productService.deleteProduct(id).subscribe(() => {
