@@ -11,6 +11,30 @@
       "category": "Mobiles",
       "quantity": 2,
       "id": 3
+    },
+    {
+      "name": "LG Refrigerator",
+      "category": "Appliances",
+      "quantity": 2,
+      "id": 4
+    },
+    {
+      "name": "Sony Television",
+      "category": "Appliances",
+      "quantity": 10,
+      "id": 5
+    },
+    {
+      "name": "asd",
+      "category": "Computers",
+      "quantity": 2,
+      "id": 6
+    },
+    {
+      "name": "sdrsd",
+      "category": "Computers",
+      "quantity": 5,
+      "id": 7
     }
   ]
 }

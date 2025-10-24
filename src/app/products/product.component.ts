@@ -2,11 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { Product, ProductService } from "../services/product.service";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 @Component({
     selector: 'app-products',
     standalone: true, 
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, RouterModule],
     templateUrl: './product.component.html',
     styleUrls: ['./product.component.css']
 })
@@ -26,6 +27,8 @@ export class ProductsComponent implements OnInit {
             this.products = data;
         });
     }
+
+    
 
     // addProduct() {
     //     if(this.newProduct.name && this.newProduct.category && this.newProduct.quantity > 0) {
